@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ChocoRocks</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #fff9f4; color: #3d2b1f; }
+        header { background-color: #4e342e; color: white; padding: 1em; text-align: center; }
+        nav { display: flex; justify-content: center; background-color: #6d4c41; }
+        nav a {
+            padding: 1em 2em;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        nav a:hover { background-color: #8d6e63; }
+        section {
+            padding: 2em;
+            display: none;
+        }
+        section.active { display: block; }
+        .img-container {
+            text-align: center;
+            margin-top: 2em;
+        }
+        .img-container img {
+            max-width: 90%;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ChocoRocks - Chocolate Artesanal</h1>
+        <p>Descubre el sabor auténtico con trozos de almendra</p>
+    </header>
+    <nav>
+        <a href="#" onclick="mostrar('inicio')">Inicio</a>
+        <a href="#" onclick="mostrar('variedades')">Variedades</a>
+        <a href="#" onclick="mostrar('packaging')">Packaging</a>
+    </nav>
+    <section id="inicio" class="active">
+        <h2>Bienvenido a ChocoRocks</h2>
+        <p>Nuestro chocolate oscuro artesanal está hecho con ingredientes naturales y un toque crujiente de almendras.</p>
+        <div class="img-container">
+            <img src="chocorocks.png" alt="Empaque de ChocoRocks">
+        </div>
+    </section>
+    <section id="variedades">
+        <h2>Nuestras Variedades</h2>
+        <p>Prueba nuestros chocolates con almendras, avellanas, y frutos rojos.</p>
+        <div class="img-container">
+            <img src="variedades.png" alt="Variedades de Chocolate">
+        </div>
+    </section>
+    <section id="packaging">
+        <h2>Diseño del Empaque</h2>
+        <p>El diseño moderno refleja la esencia artesanal y natural de nuestro producto.</p>
+        <div class="img-container">
+            <img src="packaging.png" alt="Diseño del Empaque">
+        </div>
+    </section>
+    <script>
+        function mostrar(id) {
+            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+</html>
