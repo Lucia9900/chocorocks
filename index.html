@@ -1,73 +1,109 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>ChocoRocks</title>
-    <style>
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #fff9f4; color: #3d2b1f; }
-        header { background-color: #4e342e; color: white; padding: 1em; text-align: center; }
-        nav { display: flex; justify-content: center; background-color: #6d4c41; }
-        nav a {
-            padding: 1em 2em;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        nav a:hover { background-color: #8d6e63; }
-        section {
-            padding: 2em;
-            display: none;
-        }
-        section.active { display: block; }
-        .img-container {
-            text-align: center;
-            margin-top: 2em;
-        }
-        .img-container img {
-            max-width: 90%;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChocoRocks</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #fffdf8;
+      color: #333;
+    }
+    header {
+      background-color: #3e2723;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: #5d4037;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffcc80;
+    }
+    .tab {
+      display: none;
+      padding: 2rem;
+    }
+    .tab.active {
+      display: block;
+    }
+    .image-section {
+      text-align: center;
+    }
+    .image-section img {
+      max-width: 90%;
+      border-radius: 16px;
+      margin-top: 1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #6d4c41;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>ChocoRocks - Chocolate Artesanal</h1>
-        <p>Descubre el sabor auténtico con trozos de almendra</p>
-    </header>
-    <nav>
-        <a href="#" onclick="mostrar('inicio')">Inicio</a>
-        <a href="#" onclick="mostrar('variedades')">Variedades</a>
-        <a href="#" onclick="mostrar('packaging')">Packaging</a>
-    </nav>
-    <section id="inicio" class="active">
-        <h2>Bienvenido a ChocoRocks</h2>
-        <p>Nuestro chocolate oscuro artesanal está hecho con ingredientes naturales y un toque crujiente de almendras.</p>
-        <div class="img-container">
-            <img src="chocorocks.png" alt="Empaque de ChocoRocks">
-        </div>
-    </section>
-    <section id="variedades">
-        <h2>Nuestras Variedades</h2>
-        <p>Prueba nuestros chocolates con almendras, avellanas, y frutos rojos.</p>
-        <div class="img-container">
-            <img src="variedades.png" alt="Variedades de Chocolate">
-        </div>
-    </section>
-    <section id="packaging">
-        <h2>Diseño del Empaque</h2>
-        <p>El diseño moderno refleja la esencia artesanal y natural de nuestro producto.</p>
-        <div class="img-container">
-            <img src="packaging.png" alt="Diseño del Empaque">
-        </div>
-    </section>
-    <script>
-        function mostrar(id) {
-            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-        }
-    </script>
+  <header>
+    <h1>ChocoRocks</h1>
+    <p>Chocolate artesanal con alma creativa</p>
+  </header>
+  <nav>
+    <a href="#" onclick="showTab('home')">Inicio</a>
+    <a href="#" onclick="showTab('productos')">Productos</a>
+    <a href="#" onclick="showTab('ingredientes')">Ingredientes</a>
+    <a href="#" onclick="showTab('contacto')">Contacto</a>
+  </nav>
+
+  <section id="home" class="tab active">
+    <div class="section-title">Bienvenidos a ChocoRocks</div>
+    <p style="text-align:center">Descubre el sabor único de nuestros chocolates artesanales, hechos con amor y creatividad.</p>
+    <div class="image-section">
+      <img src="/mnt/data/93c7cd6c-d2d1-4f1f-b0e9-52b54f087b30.png" alt="ChocoRocks Packaging">
+    </div>
+  </section>
+
+  <section id="productos" class="tab">
+    <div class="section-title">Nuestros Productos</div>
+    <div class="image-section">
+      <img src="/mnt/data/cd8c4608-58b1-44a7-80b9-ccfc25f9a837.png" alt="Tipos de Chocolates">
+    </div>
+  </section>
+
+  <section id="ingredientes" class="tab">
+    <div class="section-title">Ingredientes Naturales</div>
+    <p style="max-width: 600px; margin: auto; text-align: center;">
+      Seleccionamos cuidadosamente cada almendra, cacao y especia para brindarte un producto sano, delicioso y único.
+    </p>
+  </section>
+
+  <section id="contacto" class="tab">
+    <div class="section-title">Contáctanos</div>
+    <p style="text-align: center;">
+      Escríbenos a <strong>hola@chocorocks.gt</strong> o síguenos en redes sociales para conocer nuestras promociones.
+    </p>
+  </section>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
+
